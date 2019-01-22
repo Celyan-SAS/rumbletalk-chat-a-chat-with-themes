@@ -322,6 +322,7 @@ class RumbleTalk
                     'username' => self::getLoginName($current_user, $chatOptions['loginName']),
                     'hash' => $hash
                 );
+				$loginInfo = apply_filters('rumbletalk_change_javascript_login_info',$loginInfo,$current_user);
                 $loginInfo = json_encode($loginInfo);
 
                 $str = "<script>rtmq('login', {$loginInfo});</script>";
